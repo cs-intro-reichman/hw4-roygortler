@@ -158,7 +158,8 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-       
+       if(str1.isEmpty()||str2.isEmpty())
+       return -2;
         if(str1.length()>str2.length())
         return 1;
         if(str1.length()<str2.length())
