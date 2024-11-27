@@ -22,6 +22,11 @@ public class ArrCharOps {
         System.out.println(compareTo("Zoo", "zoo"));
         System.out.println(hashCode(arr1));
         System.out.println(hashCode(arr2));
+        
+        boolean test1 = ArrCharOps.compareTo("abc", "abc") == 0;
+        boolean test2 = ArrCharOps.compareTo("abc", "aBc") == 1;
+        boolean test3 = ArrCharOps.compareTo("abc", "abcd") == -1;
+        System.out.println(test1+" "+test2+" "+test3);
     }
 
     /** Prints the given array of characters, and moves the cursor to the next line.
@@ -153,17 +158,30 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
+       
         if(str1.length()>str2.length())
         return 1;
         if(str1.length()<str2.length())
         return -1;
         if(str1.length()==str2.length()){
             for(int i=0;i<str1.length();i++){
-                if (str1.charAt(i)>str2.charAt(i))
-                return 1;
-                if (str1.charAt(i)<str2.charAt(i))
+                if (str1.charAt(i)>str2.charAt(i)&&str1.charAt(i)-str2.charAt(i)<32)
+               {System.out.println(str1.charAt(i)-str2.charAt(i)+"1"); return -1;}
+                else
+                if (str1.charAt(i)>str2.charAt(i)&&str1.charAt(i)-str2.charAt(i)>=32){
+                    return 1;}
+                else
+                    if (str1.charAt(i)<str2.charAt(i)&&str2.charAt(i)-str1.charAt(i)<32)
+                {
                 return -1;
-            }
-        }return 0;
+                           }
+                else 
+                if(str2.charAt(i)>str1.charAt(i)&&str2.charAt(i)-str1.charAt(i)>=32)
+                {
+                    return 1;}
+                
+                
+                      }  return 0;        
+        }return 1;
     }
 }
