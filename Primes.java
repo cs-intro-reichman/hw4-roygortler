@@ -17,13 +17,13 @@ public static boolean[] arrPrime(int n){
 }public static void printPrime(int n){
     double c=0.0;
     boolean[]arr=arrPrime(n);
-    System.out.println("Prime numbers up to"+n+":");
+    System.out.println("Prime numbers up to "+n+":");
     for(int i=0;i<arr.length;i++){
         if(!arr[i])
         {System.out.println(i);
             c++;}
             
     }int x=(int) ((c/n)*100);
-    System.out.println("There are "+(int)c+" primes between 2 and "+n+"("+x+"% are primes)");
+    System.out.println("There are "+(int)c+" primes between 2 and "+n+" ("+x+"% are primes)");
 }
 }
