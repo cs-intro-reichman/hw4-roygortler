@@ -4,7 +4,7 @@ public class Primes {
         printPrime(n);
     }
 public static boolean[] arrPrime(int n){
-    boolean[]arr1=new boolean[n];
+    boolean[]arr1=new boolean[n+1];
     arr1[0]=true;
     arr1[1]=true;
     for(int i=2;i<arr1.length;i++){
@@ -15,12 +15,15 @@ public static boolean[] arrPrime(int n){
 
     }return arr1;
 }public static void printPrime(int n){
-    int c=0;
+    double c=0.0;
     boolean[]arr=arrPrime(n);
+    System.out.println("Prime numbers up to"+n+":");
     for(int i=0;i<arr.length;i++){
         if(!arr[i])
         {System.out.println(i);
             c++;}
-    }System.out.println(c+"%");
+            
+    }int x=(int) ((c/n)*100);
+    System.out.println("There are "+(int)c+" primes between 2 and "+n+"("+x+"% are primes)");
 }
 }
